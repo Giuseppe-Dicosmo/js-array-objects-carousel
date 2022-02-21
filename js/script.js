@@ -120,13 +120,13 @@ arrowsTop.addEventListener('click', function(){
 const containerImgAnte = document.querySelector (".arrows")
 console.log(containerImgAnte)
 
-for (let y = 0; y < items.length; y++){
+for (let y = 0; y < liste.listaImg.length; y++){
 
   const crItemAnte = document.createElement ('div')
   crItemAnte.classList.add('item_g')
   containerImgAnte.append(crItemAnte)
 
-  crItemAnte.innerHTML = `<img src="${items[y]}"></img>`
+  crItemAnte.innerHTML = `<img src="${liste.listaImg[y]}"></img>`
 
 }
 
