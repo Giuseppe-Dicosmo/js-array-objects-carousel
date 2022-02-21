@@ -65,8 +65,7 @@ function image(lista) {
 }
 
 const liste = image(items)
-console.log("🚀 ~ liste", liste)
-
+console.log("liste", liste)
 
 
 // Ho appeso le immagini dentro al contenitore
