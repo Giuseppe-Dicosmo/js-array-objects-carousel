@@ -39,35 +39,29 @@ console.log(arrowsBottom)
 let cambiaImmagine = 2;
 
 // -----------------------------------------
+
+
 function image(lista) {
 
+  let immagini = [], stati = [], descrizioni = [];
 
-  const listaImg = lista.map( ({immagine}) => {
 
-    return immagine;
+  lista.forEach( (elemento) => {
+    const {immagine, stato, descrizione} = elemento;
 
-  })
-  // console.log("🚀 ~ quadrati", quadrati)
-
-  const listaStati = lista.map( ({stato}) => {
-
-    return stato;
-
-  })
-  // console.log("🚀 ~ quadrati1", quadrati1)
-
-  const listaDescrizioni = lista.map( ({descrizione}) => {
-
-    return descrizione;
-
+    immagini.push(immagine);
+    stati.push(stato);
+    descrizioni.push(descrizione);
   })
 
+  // console.log("immagini", immagini, stati, descrizioni)
 
   return {
-    listaImg,
-    listaStati,
-    listaDescrizioni
-  };
+    immagini,
+    stati,
+    descrizioni
+  }
+
 }
 
 const liste = image(items)
@@ -76,13 +70,13 @@ console.log("🚀 ~ liste", liste)
 
 
 // Ho appeso le immagini dentro al contenitore
-for (let i = 0; i < liste.listaImg.length; i++){
+for (let i = 0; i < liste.immagini.length; i++){
 
   const crItem = document.createElement ('div')
   crItem.classList.add('cr_item')
   containerImg.append(crItem)
 
-  crItem.innerHTML = `<img src="${liste.listaImg[i]}"></img>`
+  crItem.innerHTML = `<img src="${liste.immagini[i]}"></img>`
 
   if (cambiaImmagine == i) {
     crItem.classList.add('cr_active')
@@ -120,13 +114,13 @@ arrowsTop.addEventListener('click', function(){
 const containerImgAnte = document.querySelector (".arrows")
 console.log(containerImgAnte)
 
-for (let y = 0; y < liste.listaImg.length; y++){
+for (let y = 0; y < liste.immagini.length; y++){
 
   const crItemAnte = document.createElement ('div')
   crItemAnte.classList.add('item_g')
   containerImgAnte.append(crItemAnte)
 
-  crItemAnte.innerHTML = `<img src="${liste.listaImg[y]}"></img>`
+  crItemAnte.innerHTML = `<img src="${liste.immagini[y]}"></img>`
 
 }
 
