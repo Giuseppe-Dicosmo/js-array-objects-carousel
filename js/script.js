@@ -38,49 +38,62 @@ console.log(arrowsBottom)
 
 let cambiaImmagine = 2;
 
+
 // -----------------------------------------
 
 
-function image(lista) {
+// function image(lista) {
 
-  let immagini = [], stati = [], descrizioni = [];
-
-
-  lista.forEach( (elemento) => {
-    const {immagine, stato, descrizione} = elemento;
-
-    immagini.push(immagine);
-    stati.push(stato);
-    descrizioni.push(descrizione);
-  })
-
-  // console.log("immagini", immagini, stati, descrizioni)
-
-  return {
-    immagini,
-    stati,
-    descrizioni
-  }
-
-}
-
-const liste = image(items)
-console.log("liste", liste)
+//   let immagini = [], stati = [], descrizioni = [];
 
 
-// Ho appeso le immagini dentro al contenitore
-for (let i = 0; i < liste.immagini.length; i++){
+//   lista.forEach( (elemento) => {
+//     const {immagine, stato, descrizione} = elemento;
+
+//     immagini.push(immagine);
+//     stati.push(stato);
+//     descrizioni.push(descrizione);
+//   })
+
+//   // console.log("immagini", immagini, stati, descrizioni)
+
+//   return {
+//     immagini,
+//     stati,
+//     descrizioni
+//   }
+
+// }
+
+// const liste = image(items)
+// console.log("liste", liste)
+
+
+
+items.forEach( (elemento) => {
 
   const crItem = document.createElement ('div')
   crItem.classList.add('cr_item')
   containerImg.append(crItem)
 
-  crItem.innerHTML = `<img src="${liste.immagini[i]}"></img>`
+  crItem.innerHTML = `<img src="${elemento.immagine}"></img>`
 
-  if (cambiaImmagine == i) {
-    crItem.classList.add('cr_active')
-  }
-}
+})
+
+
+// // Ho appeso le immagini dentro al contenitore
+// for (let i = 0; i < liste.immagini.length; i++){
+
+//   const crItem = document.createElement ('div')
+//   crItem.classList.add('cr_item')
+//   containerImg.append(crItem)
+
+//   crItem.innerHTML = `<img src="${liste.immagini[i]}"></img>`
+
+//   if (cambiaImmagine == i) {
+//     crItem.classList.add('cr_active')
+//   }
+// }
 
 
 
@@ -106,6 +119,10 @@ arrowsTop.addEventListener('click', function(){
 
 })
 
+if (cambiaImmagine === 2) {
+  allDivItem[cambiaImmagine].classList.add('cr_active')
+}
+
 
 
 
@@ -113,13 +130,23 @@ arrowsTop.addEventListener('click', function(){
 const containerImgAnte = document.querySelector (".arrows")
 console.log(containerImgAnte)
 
-for (let y = 0; y < liste.immagini.length; y++){
+items.forEach( (elemento) => {
 
   const crItemAnte = document.createElement ('div')
   crItemAnte.classList.add('item_g')
   containerImgAnte.append(crItemAnte)
 
-  crItemAnte.innerHTML = `<img src="${liste.immagini[y]}"></img>`
+  crItemAnte.innerHTML = `<img src="${elemento.immagine}"></img>`
 
-}
+})
+
+// for (let y = 0; y < liste.immagini.length; y++){
+
+//   const crItemAnte = document.createElement ('div')
+//   crItemAnte.classList.add('item_g')
+//   containerImgAnte.append(crItemAnte)
+
+//   crItemAnte.innerHTML = `<img src="${liste.immagini[y]}"></img>`
+
+// }
 
